@@ -1,4 +1,5 @@
 import logging
+
 import numerapi
 
 napi = numerapi.NumerAPI()

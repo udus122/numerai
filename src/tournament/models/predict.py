@@ -4,8 +4,8 @@ import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 from ..data.download_data import download_data
-from .train import train
 from ..libs.submit import submit
+from .train import train
 
 # Define models here as (ID, model instance),
 # a model ID of None is submitted as your default model

@@ -2,8 +2,9 @@
 download numerai dataset through with numerai api
 """
 
-import numerapi
 import logging
+
+import numerapi
 
 napi = numerapi.NumerAPI()
 

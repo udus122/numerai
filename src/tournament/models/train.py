@@ -1,8 +1,10 @@
-import predict
-import os
 import logging
+import os
+
 import joblib
 import pandas as pd
+
+import predict
 
 TRAINED_MODEL_PREFIX = "./trained_model"
 
