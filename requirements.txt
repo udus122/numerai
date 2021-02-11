@@ -1,0 +1,25 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+joblib
+lightgbm
+xgboost
+
+# dev
+## tools
+black
+isort
+## jupyter
+jupyterlab>=3.0.0
+### extension
+jupyterlab-kite>=2.0.2
+lckr-jupyterlab-variableinspector
+jupyterlab_code_formatter
+jupyterlab-git==0.30.0b1
+aquirdturtle_collapsible_headings
+
+# numerai
+numerapi
