@@ -2,7 +2,7 @@ import logging
 
 import numerapi
 
-napi = numerapi.NumerAPI()
+napi = numerapi.NumerAPI(verbosity="info")
 
 
 def submit(predictions, predict_output_path, model_id=None):

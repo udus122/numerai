@@ -1,10 +1,16 @@
 import os
 import random
+from pathlib import Path
 
 import numpy as np
 
 # Data directory
-DIR = "/kaggle/working"
+ROOT = Path("/workspace").resolve()
+INPUT_ROOT = ROOT / "data"
+RAW_DATA = INPUT_ROOT / "raw"
+WORK_DIR = ROOT / "src"
+OUTPUT_ROOT = ROOT / "out"
+PROC_DATA = INPUT_ROOT / "prcessed"
 
 # Set seed for reproducability
 seed = 1234

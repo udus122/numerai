@@ -12,6 +12,7 @@ xgboost
 ## tools
 black
 isort
+flake8
 ## jupyter
 jupyterlab>=3.0.0
 xeus-python
@@ -24,3 +25,4 @@ aquirdturtle_collapsible_headings
 
 # numerai
 numerapi
+numerai-cli

@@ -1,0 +1,16 @@
+{
+  "name": "numerai",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+  ],
+  "service": "jupyter",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": null
+  },
+  "extensions": [
+    "ms-python.python",
+    "kiteco.kite",
+    "oderwat.indent-rainbow"
+  ],
+}
