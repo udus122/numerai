@@ -13,6 +13,7 @@ xgboost
 black
 isort
 flake8
+rope
 ## jupyter
 jupyterlab>=3.0.0
 xeus-python

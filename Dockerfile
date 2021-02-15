@@ -6,10 +6,9 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /workspace
 
 RUN apt-get update && apt-get -y upgrade \
-    && apt-get -y -qq install \
+    && apt-get -y -qq --no-install-recommends install \
     curl \
     git \
-    # for lightgbm
     libgomp1 \
     wget \
     zsh \
@@ -49,3 +48,16 @@ RUN pip install -U pip \
 RUN jupyter labextension install @jupyterlab/git
 # jupyer lab 3系に非対応
 # && jupyter labextension install jupyterlab_filetree
+
+WORKDIR /numerai
+
+ADD . .
+
+# For numerai-cli
+ARG NUMERAI_PUBLIC_ID
+ENV NUMERAI_PUBLIC_ID=$NUMERAI_PUBLIC_ID
+
+ARG NUMERAI_SECRET_KEY
+ENV NUMERAI_SECRET_KEY=$NUMERAI_SECRET_KEY
+
+CMD ['python', './src/tournament/workflow/main.py']
