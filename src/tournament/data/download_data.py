@@ -34,17 +34,17 @@ def load_data(directory: str, reduce_memory: bool = True) -> tuple:
     full_path = f"{directory}/numerai_dataset_{napi.get_current_round()}/"
     train_path = full_path + "numerai_training_data.csv"
     test_path = full_path + "numerai_tournament_data.csv"
-    train = pd.read_csv(train_path)
-    test = pd.read_csv(test_path)
+    train_data = pd.read_csv(train_path)
+    tournament_data = pd.read_csv(test_path)
 
     # Reduce all features to 32-bit floats
     if reduce_memory:
-        num_features = [f for f in train.columns if f.startswith("feature")]
-        train[num_features] = train[num_features].astype(np.float32)
-        test[num_features] = test[num_features].astype(np.float32)
+        num_features = [f for f in train_data.columns if f.startswith("feature")]
+        train_data[num_features] = train_data[num_features].astype(np.float32)
+        tournament_data[num_features] = tournament_data[num_features].astype(np.float32)
 
-    val = test[test["data_type"] == "validation"]
-    return train, val, test
+    validation_data = tournament_data[tournament_data["data_type"] == "validation"]
+    return train_data, validation_data, tournament_data
 
 
 # TODO: add test code

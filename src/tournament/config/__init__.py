@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 
 # Data directory
-ROOT = Path("/workspace").resolve()
+ROOT = Path(__file__).resolve().parents[3]
 INPUT_ROOT = ROOT / "data"
 RAW_DATA = INPUT_ROOT / "raw"
 WORK_DIR = ROOT / "src"
