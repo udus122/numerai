@@ -17,3 +17,7 @@ seed = 1234
 random.seed(seed)
 np.random.seed(seed)
 os.environ["PYTHONHASHSEED"] = str(seed)
+
+# Numerai
+NUMERAI_PUBLIC = os.environ.get("NUMERAI_PUBLIC")
+NUMERAI_SECRET = os.environ.get("NUMERAI_SECRET")
