@@ -8,11 +8,37 @@
   "workspaceFolder": "/workspace",
   "settings": {
     "terminal.integrated.defaultProfile.linux": null,
-    "jupyter.alwaysTrustNotebooks": true
+    "jupyter.alwaysTrustNotebooks": true,
+    "python.pythonPath": "/usr/local/bin/python",
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "off",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+      "--max-line-length",
+      "99",
+      "--ignore=E203,W503,W504"
+    ],
+    "python.linting.flake8Path": "/usr/local/bin/flake8",
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/usr/local/bin/black",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "python.sortImports.args": [
+      "--profile=black",
+    ],
   },
   "extensions": [
     "ms-python.python",
     "kiteco.kite",
-    "oderwat.indent-rainbow"
+    "oderwat.indent-rainbow",
+    "ms-python.vscode-pylance",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "njpwerner.autodocstring"
   ],
+  "postCreateCommand": "poetry install",
+  "shutdownAction": "stopCompose"
 }
