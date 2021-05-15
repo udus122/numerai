@@ -1,12 +1,14 @@
 version: "3"
 services:
   jupyter:
-    build: .
+    container_name: "numerai"
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       PYTHONPATH: "/workspace/src:$PYTHONPATH"
     volumes:
-      - .:/workspace
-      - ~/.jupyter:/root/.jupyter
+      - .:/workspace:cached
     ports:
-      - 8888:8888
-    command: "jupyter lab --ip=0.0.0.0 --allow-root --NotebookApp.token='' --port=8888 --no-browser"
+      - 8880:8880
+    command: "jupyter lab --ip=0.0.0.0 --allow-root --NotebookApp.token='' --port=8880 --no-browser"

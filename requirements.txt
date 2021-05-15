@@ -15,13 +15,13 @@ isort
 flake8
 rope
 ## jupyter
-jupyterlab>=3.0.0
+jupyterlab
 xeus-python
 ### extension
-jupyterlab-kite>=2.0.2
+jupyterlab-kite
 lckr-jupyterlab-variableinspector
 jupyterlab_code_formatter
-jupyterlab-git==0.30.0b1
+jupyterlab-git
 aquirdturtle_collapsible_headings
 
 # numerai

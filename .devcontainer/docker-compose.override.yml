@@ -1,0 +1,15 @@
+version: "3"
+services:
+  jupyter:
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig #gitの設定
+      #zsh関連の設定ファイルをマウント
+      - ~/.zshrc:/root/.zshrc
+      - ~/.zlogin:/root/.zlogin
+      - ~/.zprofile:/root/.zprofile
+      - ~/.zenv:/root/.zenv
+      # prezto関連のファイルをマウント
+      - ~/.zpreztorc:/root/.zpreztorc
+      - ~/.zprezto:/root/.zprezto
+      - ~/.jupyter:/root/.jupyter
+      

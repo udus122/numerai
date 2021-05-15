@@ -2,11 +2,13 @@
   "name": "numerai",
   "dockerComposeFile": [
     "../docker-compose.yml",
+    "docker-compose.override.yml",
   ],
   "service": "jupyter",
   "workspaceFolder": "/workspace",
   "settings": {
-    "terminal.integrated.shell.linux": null
+    "terminal.integrated.defaultProfile.linux": null,
+    "jupyter.alwaysTrustNotebooks": true
   },
   "extensions": [
     "ms-python.python",

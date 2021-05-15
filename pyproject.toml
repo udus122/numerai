@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "numerai"
+version = "0.1.0"
+description = ""
+authors = ["yudai1202 <u.yudai1202@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.20.2"
+pandas = "^1.2.4"
+
+[tool.poetry.dev-dependencies]
+jupyterlab = "^3.0.14"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
