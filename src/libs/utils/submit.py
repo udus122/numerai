@@ -1,8 +1,6 @@
 import logging
 
-import numerapi
-
-napi = numerapi.NumerAPI(verbosity="info")
+from libs.napi import napi
 
 
 def submit(predictions, predict_output_path, model_id=None):
@@ -14,4 +12,4 @@ def submit(predictions, predict_output_path, model_id=None):
     # NUMERAI_PUBLIC_ID and NUMERAI_SECRET_KEY
     # these are set by docker via the numerai cli; see README for more info
     logging.info("submitting")
-    napi.upload_predictions(predict_output_path, model_id)
+    napi.upload_predictions(predict_output_path, model_id=model_id)

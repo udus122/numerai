@@ -6,12 +6,14 @@ from pprint import pprint
 import numpy as np
 
 # Data directory
-ROOT = Path(__file__).resolve().parents[2]
-DATA_DIR = ROOT / "data"
+ROOT_DIR = Path(__file__).resolve().parents[1]
+DATA_DIR = ROOT_DIR / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
-SRC_DIR = ROOT / "src"
-OUTPUT_ROOT = ROOT / "out"
-PROC_DATA = DATA_DIR / "prcessed"
+OUTPUT_DIR = DATA_DIR / "output"
+SRC_DIR = ROOT_DIR / "src"
+LOG_DIR = ROOT_DIR / "logs"
+MODEL_DIR = ROOT_DIR / "models"
+
 
 # Set seed for reproducability
 seed = 1234

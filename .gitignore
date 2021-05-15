@@ -144,6 +144,9 @@ cython_debug/
 *.npz
 *.pkl
 
+.DS_Store
 .numerai*
 .virtual_documents
 data/
+models/
+000_playground.ipynb
