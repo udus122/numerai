@@ -6,7 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      PYTHONPATH: "/workspace/src:$PYTHONPATH"
+      TZ: "Asia/Tokyo"
+    env_file:
+      - .env
     volumes:
       - .:/workspace:cached
     ports:

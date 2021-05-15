@@ -4,13 +4,13 @@ To get started, install the required packages: pip install pandas numpy sklearn 
 """
 
 import logging
+from code import config
+from code.data.download_data import download_current_data, load_data
 from pathlib import Path
 
 import joblib
 import lightgbm as lgb
 import numerapi
-from tournament import config
-from tournament.data.download_data import download_current_data, load_data
 
 TARGET_NAME = f"target"
 PREDICTION_NAME = f"prediction"
@@ -20,10 +20,10 @@ MODEL_FILE = Path("trained_model")
 def main():
     logging.info("Loading data...")
     # The training data is used to train your model how to predict the targets.
-    download_current_data(str(config.INPUT_ROOT))
+    download_current_data(str(config.DATA_DIR))
 
-    train_data, validation_data, tournament_data = load_data(
-        str(config.INPUT_ROOT), reduce_memory=True
+    train_data, validation_data, code_data = load_data(
+        str(config.DATA_DIR), reduce_memory=True
     )
 
     feature_names = [f for f in train_data.columns if f.startswith("feature")]
@@ -46,10 +46,10 @@ def main():
         logging.info("saving features")
         joblib.dump(model, MODEL_FILE.name)
 
-    # Generate predictions on both training and tournament data
+    # Generate predictions on both training and code data
     logging.info("Generating predictions...")
     train_data[PREDICTION_NAME] = model.predict(train_data[feature_names])
-    tournament_data[PREDICTION_NAME] = model.predict(tournament_data[feature_names])
+    code_data[PREDICTION_NAME] = model.predict(code_data[feature_names])
 
     # Set API Keys for submitting to Numerai
     PUBLIC_ID = "2JH4X4MSLA74NG4JRDE7WJ46EOFMM7CS"
@@ -59,7 +59,7 @@ def main():
     napi = numerapi.NumerAPI(
         public_id=PUBLIC_ID, secret_key=SECRET_KEY, verbosity="info"
     )
-    tournament_data[["id", PREDICTION_NAME]].to_csv("submission.csv", index=False)
+    code_data[["id", PREDICTION_NAME]].to_csv("submission.csv", index=False)
     # Upload predictions to Numerai
     napi.upload_predictions("submission.csv")
 

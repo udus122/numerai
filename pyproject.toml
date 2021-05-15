@@ -8,9 +8,17 @@ authors = ["yudai1202 <u.yudai1202@gmail.com>"]
 python = "^3.8"
 numpy = "^1.20.2"
 pandas = "^1.2.4"
+lightgbm = "^3.2.1"
+matplotlib = "^3.4.2"
+numerapi = "^2.5.1"
+numerai-cli = "^0.3.0"
+seaborn = "^0.11.1"
 
 [tool.poetry.dev-dependencies]
 jupyterlab = "^3.0.14"
+black = "^21.5b1"
+flake8 = "^3.9.2"
+isort = "^5.8.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
