@@ -6,7 +6,7 @@ from pprint import pprint
 import numpy as np
 
 # Data directory
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
 SRC_DIR = ROOT / "src"
