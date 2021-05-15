@@ -9,6 +9,7 @@ from pathlib import Path
 import joblib
 import lightgbm as lgb
 import numerapi
+
 from libs import config
 from libs.data.download_data import download_current_data, load_data
 
