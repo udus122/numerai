@@ -12,14 +12,15 @@ from scipy.stats import spearmanr
 
 import config
 from libs.features import get_group_stats
+from libs.napi import napi
 from libs.utils.data import download_current_data, load_data
 from libs.utils.log import create_logger
 from libs.utils.metrics import evaluate
 from libs.utils.submit import submit
 
 RUN_NAME = "base_lgbm"
-MODEL_NAME = "udus"
-MODEL_ID = "5f4056a7-60a9-4203-839a-2ab0a2cbec5f"
+MODEL_NAME = "udus1"
+MODEL_ID = napi.get_models()[MODEL_NAME]
 TARGET_NAME = "target"
 PREDICTION_NAME = "prediction"
 DATASET_DIR = config.RAW_DATA_DIR

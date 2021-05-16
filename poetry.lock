@@ -1243,9 +1243,28 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [package.extras]
 test = ["pytest (>=3.0.0)", "pytest-cov"]
 
+[[package]]
+name = "xgboost"
+version = "1.4.2"
+description = "XGBoost Python Package"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+dask = ["dask", "pandas", "distributed"]
+datatable = ["datatable"]
+pandas = ["pandas"]
+plotting = ["graphviz", "matplotlib"]
+scikit-learn = ["scikit-learn"]
+
+[package.dependencies]
+numpy = "*"
+scipy = "*"
+
 [metadata]
 python-versions = "^3.8"
-content-hash = "764965dfb0247be744f54342e523d6870e65fabaec0f6813a2d0e7072a5e6bf4"
+content-hash = "6462613598e4c90a2950865c1168fed3e49aaf609f0dde650885e75595e8c9d2"
 
 [metadata.files]
 anyio = [
@@ -2036,4 +2055,11 @@ webencodings = [
 wheel = [
     {file = "wheel-0.36.2-py2.py3-none-any.whl", hash = "sha256:78b5b185f0e5763c26ca1e324373aadd49182ca90e825f7853f4b2509215dc0e"},
     {file = "wheel-0.36.2.tar.gz", hash = "sha256:e11eefd162658ea59a60a0f6c7d493a7190ea4b9a85e335b33489d9f17e0245e"},
+]
+xgboost = [
+    {file = "xgboost-1.4.2-py3-none-macosx_10_14_x86_64.macosx_10_15_x86_64.macosx_11_0_x86_64.whl", hash = "sha256:e8f1a366a403784afd30a56eb99a429cefc45d906943cd362025ccf942208e13"},
+    {file = "xgboost-1.4.2-py3-none-manylinux2010_x86_64.whl", hash = "sha256:ec3f60d53dcd23273a5c7a495ba0f8205656ce750eb2ce7798726a4b2ef4955a"},
+    {file = "xgboost-1.4.2-py3-none-manylinux2014_aarch64.whl", hash = "sha256:15dd5987827030b3f68e741490a8b3a4ead7c6064bd911e36235b84e0a9d0765"},
+    {file = "xgboost-1.4.2-py3-none-win_amd64.whl", hash = "sha256:7c8973204b2c2362012850605e81de5a180513fc08db36d0da9befb77c3d57c8"},
+    {file = "xgboost-1.4.2.tar.gz", hash = "sha256:5a364c152095824445ac56a83fb7f7e75913b4bb128c2fcd99b85877c9f4f8fe"},
 ]
