@@ -9,6 +9,7 @@ def create_logger(run_name: str):
     # logger
     logger_ = getLogger(run_name)
     logger_.setLevel(DEBUG)
+    logger_.propagate = False
 
     # formatter
     fmr = Formatter(
@@ -28,6 +29,4 @@ def create_logger(run_name: str):
     logger_.addHandler(fh)
     logger_.addHandler(ch)
 
-
-def get_logger(run_name):
-    return getLogger(run_name)
+    return logger_

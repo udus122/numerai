@@ -13,7 +13,7 @@ from scipy.stats import spearmanr
 import config
 from libs.features import get_group_stats
 from libs.utils.data import download_current_data, load_data
-from libs.utils.log import create_logger, get_logger
+from libs.utils.log import create_logger
 from libs.utils.metrics import evaluate
 from libs.utils.submit import submit
 
@@ -26,9 +26,7 @@ DATASET_DIR = config.RAW_DATA_DIR
 MODEL_FILE = config.MODEL_DIR / f"{RUN_NAME}.model"
 
 
-create_logger(RUN_NAME)
-logger = get_logger(RUN_NAME)
-logger.propagate = False
+logger = create_logger(RUN_NAME)
 
 
 def prepare_data() -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
